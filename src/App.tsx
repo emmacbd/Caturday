@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import CatContainer from "./CatContainer";
+import {fetchCats} from "./ApiCalls"
 
-function App() {
+
+interface MyState = {
+  catData: {}[];
+}
+
+class App extends Component<CatData> {
+    constructor(){
+      super();
+      state: MyState = {
+         catData: [],
+      }
+    }
+
+componentDidMount() {
+
+}
+
   return (
     <div className="App">
       <main>
