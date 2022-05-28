@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import CatContainer from "./CatContainer";
+import {CatDetails} from "./CatDetails";
+// import {cat} from "./CatDetails";
 import {fetchCats} from "./ApiCalls"
 
-
+// -------------- -------------- //
 
 interface CatObject {
   weight: {
@@ -55,29 +57,42 @@ interface CatObject {
 }
 
 type MyState = {
-  catData: CatObject[]
+  catData: CatObject[],
+  featuredCat?:CatObject,
+}
+
+type Props = any
+
+type CatDetailsProps = {
+  cat: React.ComponentType<CatDetailsProps>
 }
 
 class App extends Component< {}, MyState> {
       state: MyState = {
-         catData:[]
+         catData:[],
+         featuredCat:undefined
       }
 
 componentDidMount() {
   fetchCats()
-  .then(data => this.setState({catData: data}, () => {console.log(this.state)
+  .then(data => this.setState({catData: data, featuredCat: data[0]}, () => {console.log(this.state)
           }))
   .catch(error => {console.log("Oh no!", error)
     });
   }
 
-
+//GOAL: get a cat of the day on the page
+// Step 1: set state with featured cat
+// Render cat details component that displays cat information
+  // catDetails Component needs cat information
+  //
 
 render() {
   return (
     <div className="App">
       <main>
         <h1> CATURDAY </h1>
+        <CatDetails cat={this.state.featuredCat}/>
         <CatContainer />
       </main>
     </div>
