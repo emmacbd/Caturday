@@ -87,32 +87,32 @@ class App extends React.Component< {}, State> {
          featuredCat: sampleCat
       }
 
-// componentDidMount() {
-//   this.fetchCats()
-//   .then(data => this.setState({ catData: data, featuredCat: data[0] }, () => {console.log(this.state)}))
-//   .catch(error => {console.log("Oh no!", error)
-//     });
-//   }
+componentDidMount() {
+  this.fetchCats()
+  .then(data => this.setState({ catData: data, featuredCat: data[10] }, () => {console.log(this.state)}))
+  .catch(error => {console.log("Oh no!", error)
+    });
+  }
 
-//   fetchCats = (): Promise<CatObject[]> => {
-//     return fetch('https://api.thecatapi.com/v1/breeds')
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error('Network request was unsuccessful')
-//         }
-//         return response.json();
-//       })
-//       .then(data => {
-//         return data as CatObject[]
-//       })
-//   }
+  fetchCats = (): Promise<CatObject[]> => {
+    return fetch('https://api.thecatapi.com/v1/breeds')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network request was unsuccessful')
+        }
+        return response.json();
+      })
+      .then(data => {
+        return data as CatObject[]
+      })
+  }
 
 render() {
   return (
     <div className="App">
       <main>
         <h1> CATURDAY </h1>
-        <CatDetails catInfo={sampleCat}/>
+        <CatDetails catInfo={this.state.featuredCat}/>
         <CatContainer />
       </main>
     </div>
