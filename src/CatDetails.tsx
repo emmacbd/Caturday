@@ -1,12 +1,23 @@
 import React from 'react';
-import CatObject from './App';
+import { createStringLiteralFromNode } from 'typescript';
+import { CatObject } from './Interfaces'
 
-// export type cat = {
-//   catInfo:CatObject
-// }
+type CatProps = {
+  catInfo: CatObject
+}
 
-export const CatDetails = ( {cat} ) => {
+const CatDetails: React.FC<CatProps>= ({catInfo}) => {
+
   return (
-    <h3>{cat.catInfo}</h3>
+    <div>
+      <h3>{catInfo.id}</h3>
+      <h3>{catInfo.name}</h3>
+      <h3>{catInfo.temperament}</h3>
+      <h3>{catInfo.id}</h3>
+      <img src={catInfo.image.url} alt={catInfo.name}/>
+    </div>
+
   )
 }
+
+export default CatDetails;

@@ -1,98 +1,118 @@
 import React, { Component } from 'react';
 import './App.css';
 import CatContainer from "./CatContainer";
-import {CatDetails} from "./CatDetails";
+import CatDetails from "./CatDetails";
+import { CatObject, Weight, Image } from './Interfaces'
 // import {cat} from "./CatDetails";
-import {fetchCats} from "./ApiCalls"
+// import {fetchCats} from "./ApiCalls"
 
 // -------------- -------------- //
 
-interface CatObject {
-  weight: {
-    imperial: string,
-    metric: string
-  },
-  id: string,
-  name: string,
-  cfa_url: string,
-  vetstreet_url: string,
-  vcahospitals_url: string,
-  temperament: string,
-  origin: string,
-  country_codes: string,
-  country_code: string,
-  description: string,
-  life_span: string,
-  indoor: number,
-  lap: number,
-  alt_names: string,
-  adaptability: number,
-  affection_level: number,
-  child_friendly: number,
-  dog_friendly: number,
-  energy_level: number,
-  grooming: number,
-  health_issues: number,
-  intelligence: number,
-  shedding_level: number,
-  social_needs: number,
-  stranger_friendly: number,
-  vocalisation: number,
-  experimental: number,
-  hairless: number,
-  natural: number,
-  rare: number,
-  rex: number,
-  suppressed_tail: number,
-  short_legs: number,
-  wikipedia_url: string,
-  hypoallergenic: number,
-  reference_image_id: string,
-  image: {
-    id: string,
-    width: number,
-    height: number,
-    url: string
-  }
-}
 
-type MyState = {
+// type CatProps = {
+//   catInfo: CatObject
+// }
+
+
+type State = {
   catData: CatObject[],
-  featuredCat?:CatObject,
+  featuredCat: CatObject,
+}
+// let sampleCatWeight: Weight = {
+//   imperial: "7 - 10",
+//   metric: "3 - 5"
+// }
+
+// let sampleCatImage: Image = {
+//   id: "0XYvRd7oD",
+//   width: 1204,
+//   height: 1445,
+//   url: "https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg"
+// }
+
+let sampleCat: CatObject = {
+  weight: { 
+    imperial: "7 - 10",
+    metric: "3 - 5"
+  },
+  id: "abys",
+  name: "Abyssinian",
+  cfa_url: "http://cfa.org/Breeds/BreedsAB/Abyssinian.aspx",
+  vetstreet_url: "http://www.vetstreet.com/cats/abyssinian",
+  vcahospitals_url: "https://vcahospitals.com/know-your-pet/cat-breeds/abyssinian",
+  temperament: "Active, Energetic, Independent, Intelligent, Gentle",
+  origin: "Egypt",
+  country_codes: "EG",
+  country_code: "EG",
+  description: "The Abyssinian is easy to care for, and a joy to have in your home. They’re affectionate cats and love both people and other animals.",
+  life_span: "14 - 15",
+  indoor: 0,
+  lap: 1,
+  alt_names: "",
+  adaptability: 5,
+  affection_level: 5,
+  child_friendly: 3,
+  dog_friendly: 4,
+  energy_level: 5,
+  grooming: 1,
+  health_issues: 2,
+  intelligence: 5,
+  shedding_level: 2,
+  social_needs: 5,
+  stranger_friendly: 5,
+  vocalisation: 1,
+  experimental: 0,
+  hairless: 0,
+  natural: 1,
+  rare: 0,
+  rex: 0,
+  suppressed_tail: 0,
+  short_legs: 0,
+  wikipedia_url: "https://en.wikipedia.org/wiki/Abyssinian_(cat)",
+  hypoallergenic: 0,
+  reference_image_id: "0XYvRd7oD",
+  image: {
+    id: "0XYvRd7oD",
+    width: 1204,
+    height: 1445,
+    url: "https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg"
+  },
 }
 
-type Props = any
 
-type CatDetailsProps = {
-  cat: React.ComponentType<CatDetailsProps>
-}
 
-class App extends Component< {}, MyState> {
-      state: MyState = {
+class App extends React.Component< {}, State> {
+      state: State = {
          catData:[],
-         featuredCat:undefined
+         featuredCat: sampleCat
       }
 
-componentDidMount() {
-  fetchCats()
-  .then(data => this.setState({catData: data, featuredCat: data[0]}, () => {console.log(this.state)
-          }))
-  .catch(error => {console.log("Oh no!", error)
-    });
-  }
+// componentDidMount() {
+//   this.fetchCats()
+//   .then(data => this.setState({ catData: data, featuredCat: data[0] }, () => {console.log(this.state)}))
+//   .catch(error => {console.log("Oh no!", error)
+//     });
+//   }
 
-//GOAL: get a cat of the day on the page
-// Step 1: set state with featured cat
-// Render cat details component that displays cat information
-  // catDetails Component needs cat information
-  //
+//   fetchCats = (): Promise<CatObject[]> => {
+//     return fetch('https://api.thecatapi.com/v1/breeds')
+//       .then(response => {
+//         if (!response.ok) {
+//           throw new Error('Network request was unsuccessful')
+//         }
+//         return response.json();
+//       })
+//       .then(data => {
+//         return data as CatObject[]
+//       })
+//   }
 
 render() {
   return (
     <div className="App">
       <main>
         <h1> CATURDAY </h1>
-        <CatDetails cat={this.state.featuredCat}/>
+        <CatDetails catInfo={sampleCat}/>
         <CatContainer />
       </main>
     </div>
