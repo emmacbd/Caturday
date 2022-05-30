@@ -4,15 +4,8 @@ import CatContainer from "./CatContainer";
 import CatDetails from "./CatDetails";
 import FeaturedCat from './FeaturedCat';
 import { CatObject } from './Interfaces'
-// import {cat} from "./CatDetails";
 // import {fetchCats} from "./ApiCalls"
 
-// -------------- -------------- //
-
-
-// type CatProps = {
-//   catInfo: CatObject
-// }
 
 
 type State = {
@@ -26,10 +19,17 @@ class App extends React.Component< {}, State> {
          featuredCat: null,
       }
 
+ 
+  getDay = () => {
+    let today = new Date()
+    let day = today.getDate()
+    return day
+  }
+    
 
 componentDidMount() {
   this.fetchCats()
-  .then(data => this.setState({ catData: data, featuredCat: data[0] }, () => {console.log(this.state)}))
+  .then(data => this.setState({ catData: data, featuredCat: data[30] }, () => {console.log(this.state)}))
   .catch(error => {console.log("Oh no!", error)
     });
   }
