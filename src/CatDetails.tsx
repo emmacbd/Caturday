@@ -3,20 +3,22 @@ import { createStringLiteralFromNode } from 'typescript';
 import { CatObject } from './Interfaces'
 
 type CatProps = {
-  catInfo: CatObject
+  catInfo: CatObject | null
 }
 
 const CatDetails: React.FC<CatProps>= ({catInfo}) => {
 
   return (
-    <div>
+    <>
+   {catInfo ? <div className="cat-details">
       <h3>{catInfo.id}</h3>
       <h3>{catInfo.name}</h3>
       <h3>{catInfo.temperament}</h3>
       <h3>{catInfo.id}</h3>
-      <img src={catInfo.image.url} alt={catInfo.name}/>
-    </div>
-
+      <img className="cat-image" src={catInfo.image.url} alt={catInfo.name}/>
+    </div> : ''
+    }
+    </>
   )
 }
 
