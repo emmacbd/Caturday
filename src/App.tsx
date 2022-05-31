@@ -29,7 +29,7 @@ class App extends React.Component< {}, State> {
 
 componentDidMount() {
   this.fetchCats()
-  .then(data => this.setState({ catData: data, featuredCat: data[30] }, () => {console.log(this.state)}))
+  .then(data => this.setState({ catData: data, featuredCat: data[this.getDay()] }, () => {console.log(this.state)}))
   .catch(error => {console.log("Oh no!", error)
     });
   }
