@@ -1,12 +1,26 @@
 import React from 'react';
 import CatCards from './CatCards';
+import { CatObject } from './Interfaces';
 
+type CatData = {
+  catData: CatObject[] 
+}
 
-const CatContainer = () => {
+const CatContainer: React.FC<CatData> = ({catData}) => {
+
+  const catTiles = catData.map(cat => {
+    return (
+      <CatCards
+      id={cat.id}
+      img={cat.image}
+      name={cat.name}
+      key={cat.id}
+      />
+    )
+  })
   return (
-    <div>
-      <h2>hello cool cats and kittens </h2>
-      <CatCards />
+    <div className='cat-container'>
+      {catTiles}
     </div>
   )
 

@@ -53,7 +53,7 @@ render() {
       <main>
         <h1> CATURDAY </h1>
         {this.state.featuredCat && <CatDetails catInfo={this.state.featuredCat}/>}
-        <CatContainer />
+        <CatContainer catData={this.state.catData}/>
         <FeaturedCat catData={this.state.catData}/>
       </main>
     </div>
