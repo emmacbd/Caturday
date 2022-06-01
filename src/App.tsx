@@ -53,11 +53,11 @@ render() {
     <div className="App">
       <main>
         <h1> CATURDAY </h1>
-        {this.state.featuredCat && <CatDetails catInfo='beng'/>}
+         
         <CatContainer catData={this.state.catData}/>
-        <FeaturedCat catInfo={this.state.featuredCat}/>
-        <Route exact path ='/cat/:id' render={ ({ match }) => {
-          return <CatDetails catInfo={ match.params.id }  />
+       <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
+        <Route exact path ='/cats/:id' render={ ({ match }) => {
+          return <CatDetails catId={ match.params.id }  />
         } } />
            
         

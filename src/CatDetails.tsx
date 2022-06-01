@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { createStringLiteralFromNode } from 'typescript';
-import { CatObject } from './Interfaces'
+import { SelectedCat } from './Interfaces'
 
 type CatProps = {
-  catInfo: string
+  catId: string
 }
 
 // We now want to pass just the cat ID to fetch the correct cat. 
 // We want to store the cat object in state so that we can render the correct cat. 
 //we can not 
-const CatDetails: React.FC<CatProps>= ({catInfo}) => {
-  const[catId , getCat ] = useState({})
-  // useEffect(() => {
-  //   fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=beng`)
-  //   .then(response => response.json())
-  //   .then(cat => {
-  //     console.log(cat)
-  //     return cat as CatObject
-  //   })
-  //   .then(data => getCat(data))
-  // })
+const CatDetails: React.FC<CatProps>= ({catId}) => {
+  const[CatInfo , getCat ] = useState({})
+  useEffect(() => {
+    fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${catId}`)
+    .then(response => response.json())
+    .then(cat => {
+      console.log(cat)
+      return cat as SelectedCat
+    })
+    .then(data => getCat(data))
+  }, [])
   return (
     <div>
    {/* {catInfo ? <div className="cat-details">
