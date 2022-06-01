@@ -10,8 +10,9 @@ type CatCardProps = {
 
 const CatCards: React.FC<CatCardProps> = ({id, img, name, key}) => {
   return (
+    
     <div>
-      {img ? <img src={img.url} /> : <img src='https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/MT3FG3YVCNDCRDLQTHYNABGDGM.png' />}
+      {img ? <img src={img.url} /> : <img src='https://doitbeforeme.com/wp-content/uploads/2020/03/Cute-cat-drawing-step-by-step-e1584179924326.jpg' />}
       <p>{name}</p>
     </div>
   )

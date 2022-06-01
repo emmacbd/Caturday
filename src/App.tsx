@@ -3,7 +3,8 @@ import './App.css';
 import CatContainer from "./CatContainer";
 import CatDetails from "./CatDetails";
 import FeaturedCat from './FeaturedCat';
-import { CatObject } from './Interfaces'
+import { CatObject } from './Interfaces';
+import { Route, NavLink } from 'react-router-dom'
 // import {fetchCats} from "./ApiCalls"
 
 
@@ -52,9 +53,14 @@ render() {
     <div className="App">
       <main>
         <h1> CATURDAY </h1>
-        {this.state.featuredCat && <CatDetails catInfo={this.state.featuredCat}/>}
+        {this.state.featuredCat && <CatDetails catInfo='beng'/>}
         <CatContainer catData={this.state.catData}/>
-        <FeaturedCat catData={this.state.catData}/>
+        <FeaturedCat catInfo={this.state.featuredCat}/>
+        <Route exact path ='/cat/:id' render={ ({ match }) => {
+          return <CatDetails catInfo={ match.params.id }  />
+        } } />
+           
+        
       </main>
     </div>
   )
