@@ -3,37 +3,25 @@ import './FeaturedCat.css'
 import { CatObject } from './Interfaces'
 
 type CatProps = {
-    catData: CatObject[]
-}
-
-type CatState ={
-    catOfDay: CatObject | null,
-}
-
-class FeaturedCat extends React.Component<CatProps, CatState> {
-    state: CatState = {
-        catOfDay: null,
+    catInfo: CatObject | null
+  }
   
-    }
-    
-    getDay = () => {
-        let today = new Date()
-        let day = today.getDate()
-        return day
-    }
-    
+  const FeaturedCat: React.FC<CatProps>= ({catInfo}) => {
+  
+    return (
+      <>
+     {catInfo ? <div className="cat-details">
+        <h3>{catInfo.id}</h3>
+        <h3>{catInfo.name}</h3>
+        <h3>{catInfo.temperament}</h3>
+        <h3>{catInfo.id}</h3>
+        {catInfo.image && <img className="cat-image" src={catInfo.image.url} alt={catInfo.name}/>}
+      </div> : ''
+      }
+      </>
+    )
+  }
+  
 
-    componentDidMount() {
-        this.setState({catOfDay: this.props.catData[this.getDay()]})
-    }
-
-    render () {
-        return(
-           <>
-            <button> click me</button>
-           </> 
-        )
-    }
-}
 
 export default FeaturedCat
