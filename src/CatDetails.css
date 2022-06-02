@@ -2,6 +2,11 @@
     width: 300px ;
 }
 
-.cat-image {
-    width: 100px;
+.selected-cat-section {
+  display: flex;
+  padding-top: 20%;
+}
+
+.selected-cat-image {
+  width: 30%;
 }

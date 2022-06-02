@@ -1,18 +1,19 @@
 import { setDefaultResultOrder } from 'dns';
 import React, { useState, useEffect } from 'react';
-import { SelectedCat, errorKitten } from './Interfaces'
+import { SelectedCat, errorKitten } from './Interfaces';
+import './CatDetails.css';
 
 type CatProps = {
   catId: string
 }
 
 
-// We now want to pass just the cat ID to fetch the correct cat. 
-// We want to store the cat object in state so that we can render the correct cat. 
-//we can not 
+// We now want to pass just the cat ID to fetch the correct cat.
+// We want to store the cat object in state so that we can render the correct cat.
+//we can not
 const CatDetails: React.FC<CatProps>= ({catId}) => {
   const[CatInfo , getCat ] = useState<SelectedCat[]>([])
-  
+
   // const getKitten = async (catId:string) => {
   //   const url = `https://api.thecatapi.com/v1/images/search?breed_ids=${catId}`;
 
@@ -37,9 +38,9 @@ const CatDetails: React.FC<CatProps>= ({catId}) => {
     if(!CatInfo.length){
       return<div>Error</div>
     } else {
-      return <section>
-          <img src={CatInfo[0].url} />
-          <div>
+      return <section className="selected-cat-section">
+          <img className="selected-cat-image" src={CatInfo[0].url} />
+          <div className="selected-cat-info">
             <p>{CatInfo[0].breeds[0].name}</p>
             <p>{CatInfo[0].breeds[0].temperament}</p>
             <p>{CatInfo[0].breeds[0].life_span}</p>
@@ -50,8 +51,8 @@ const CatDetails: React.FC<CatProps>= ({catId}) => {
   }
 
   return (
-    
-    
+
+
     <div>
     {displayCat()}
     </div>
