@@ -1,0 +1,63 @@
+header {
+  height: 100vh;
+  width: 4em;
+  position: -webkit-sticky; /* for Safari users */
+  position: sticky;
+  top: 0rem;
+  float: left;
+  background-color: #000;
+  margin-left: -10px;
+  padding-top: 1em;
+  transition: all .2s ease-in-out;
+}
+
+header:hover {
+  height: 100vh;
+  width: 15em;
+  position: -webkit-sticky; /* for Safari users */
+  position: sticky;
+  float: left;
+  background-color: #000;
+  margin-left: -10px;
+  margin-top: -20px;
+  padding-top: 1em;
+}
+
+header:hover
+.faCat {
+  transform: scale(1.1);
+  font-size: 4em;
+  transition: all .2s ease-in-out;
+}
+
+.faCat {
+  color: #FFF;
+  font-size: 2em;
+  padding: .2em;
+}
+
+.cat-link {
+  display: none;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.2em;
+}
+
+header:hover .cat-link {
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+  padding: .2em;
+}
+
+.cat-link:hover {
+  outline: 0;
+  background-color: transparent;
+  color: #FFF;
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+
+.nav-bar {
+  text-decoration: none;
+}

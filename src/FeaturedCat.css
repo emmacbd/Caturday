@@ -1,0 +1,18 @@
+.featured-cat-details {
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f5ec;
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  padding: 2%;
+  margin-right: 2em;
+}
+
+.featured-cat-image {
+  width: 100%;
+}
+
+.featured-cat-info {
+
+}

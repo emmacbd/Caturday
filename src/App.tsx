@@ -6,6 +6,8 @@ import FeaturedCat from './FeaturedCat';
 import { CatObject } from './Interfaces';
 import { Route, NavLink } from 'react-router-dom'
 import { Navbar } from './NavBar'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
 // import {fetchCats} from "./ApiCalls"
 
 
@@ -21,13 +23,13 @@ class App extends React.Component< {}, State> {
          featuredCat: null,
       }
 
- 
+
   getDay = () => {
     let today = new Date()
     let day = today.getDate()
     return day
   }
-    
+
 
 componentDidMount() {
   this.fetchCats()
@@ -52,16 +54,24 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
+      <header>
+        <Navbar />
+      </header>
       <main>
-        <h1> CATURDAY </h1>
-         <Navbar />
-        <Route exact path='/cats' render={ () => <CatContainer catData={this.state.catData}/> } />
-       <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
-        <Route exact path ='/cats/:id' render={ ({ match }) => {
-          return <CatDetails catId={ match.params.id }  />
-        } } />
-           
-        
+        <div className="main">
+          <div className="background-events">
+            <h1 className="App-title">CATURDAY</h1>
+            <FontAwesomeIcon className="speech-bubble" icon={faComment} />
+            <h2 className="meowdy">Meowdy, folks!</h2>
+          </div>
+          <div>
+            <Route exact path='/cats' render={ () => <CatContainer catData={this.state.catData}/> } />
+            <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
+            <Route exact path ='/cats/:id' render={ ({ match }) => {
+              return <CatDetails catId={ match.params.id }  />
+            } } />
+          </div>
+        </div>
       </main>
     </div>
   )

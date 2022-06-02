@@ -1,0 +1,8 @@
+.cat-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 0px;
+  color: #FFF;
+  justify-content: center;
+  padding-top: 20%;
+}
