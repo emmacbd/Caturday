@@ -54,7 +54,7 @@ render() {
       <main>
         <h1> CATURDAY </h1>
          
-        <CatContainer catData={this.state.catData}/>
+        <CatContainer catData={this.state.catData}/> 
        <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
         <Route exact path ='/cats/:id' render={ ({ match }) => {
           return <CatDetails catId={ match.params.id }  />
