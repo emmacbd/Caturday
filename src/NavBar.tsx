@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
 
-const Navbar = () => {
+export const Navbar = () => {
     return (
     <nav>
     <NavLink to='/cats'>

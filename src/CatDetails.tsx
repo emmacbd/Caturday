@@ -37,7 +37,15 @@ const CatDetails: React.FC<CatProps>= ({catId}) => {
     if(!CatInfo.length){
       return<div>Error</div>
     } else {
-      return <p>{CatInfo[0].breeds[0].name}</p>
+      return <section>
+          <img src={CatInfo[0].url} />
+          <div>
+            <p>{CatInfo[0].breeds[0].name}</p>
+            <p>{CatInfo[0].breeds[0].temperament}</p>
+            <p>{CatInfo[0].breeds[0].life_span}</p>
+            <p>{CatInfo[0].breeds[0].description}</p>
+          </div>
+        </section>
     }
   }
 

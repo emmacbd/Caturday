@@ -5,6 +5,7 @@ import CatDetails from "./CatDetails";
 import FeaturedCat from './FeaturedCat';
 import { CatObject } from './Interfaces';
 import { Route, NavLink } from 'react-router-dom'
+import { Navbar } from './NavBar'
 // import {fetchCats} from "./ApiCalls"
 
 
@@ -53,8 +54,8 @@ render() {
     <div className="App">
       <main>
         <h1> CATURDAY </h1>
-         
-        <CatContainer catData={this.state.catData}/> 
+         <Navbar />
+        <Route exact path='/cats' render={ () => <CatContainer catData={this.state.catData}/> } />
        <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
         <Route exact path ='/cats/:id' render={ ({ match }) => {
           return <CatDetails catId={ match.params.id }  />

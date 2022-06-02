@@ -21,7 +21,7 @@ const CatContainer: React.FC<CatData> = ({catData}) => {
       </NavLink>
     )
   })
-  return (
+  return ( 
     <div className='cat-container'>
       {catTiles}
     </div>
