@@ -24,7 +24,7 @@
   top: 5%;
   left: 32%;
   font-size: 10em;
-  color: #FFF;
+  color: #b76027;
 }
 
 .meowdy {
@@ -33,7 +33,7 @@
   top: 12%;
   left: 33.5%;
   font-size:1em;
-  color: #FFF;
+  color: #b76027;
 }
 
 .background-events:hover > .speech-bubble {
@@ -42,4 +42,8 @@
 
 .background-events:hover > .meowdy {
   display: block;
+}
+
+.routes {
+  display: flex;
 }

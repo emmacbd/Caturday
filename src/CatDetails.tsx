@@ -20,14 +20,18 @@ const CatDetails: React.FC<CatProps> = ({ catId }) => {
       return <div>Error</div>
     } else {
       return <section className="selected-cat-section">
-        <img className="selected-cat-image" src={CatInfo[0].url} />
-        <div className="selected-cat-info">
-          <p>{CatInfo[0].breeds[0].name}</p>
-          <p>{CatInfo[0].breeds[0].temperament}</p>
-          <p>{CatInfo[0].breeds[0].life_span}</p>
-          <p>{CatInfo[0].breeds[0].description}</p>
-        </div>
-      </section>
+
+          <img className="selected-cat-image" src={CatInfo[0].url} />
+          <div className="selected-cat-info">
+            <p className="selected-cat-name">{CatInfo[0].breeds[0].name}</p>
+            <div className="selected-cat-other">
+              <p>{CatInfo[0].breeds[0].temperament}</p>
+              <p>{CatInfo[0].breeds[0].life_span}</p>
+              <p>{CatInfo[0].breeds[0].description}</p>
+            </div>
+          </div>
+        </section>
+
     }
   }
 
