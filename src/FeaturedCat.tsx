@@ -26,6 +26,4 @@ type CatProps = {
     )
   }
 
-
-
 export default FeaturedCat
