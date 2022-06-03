@@ -6,7 +6,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 
 type CatData = {
-    searchCats: (level: number, attribute: string) => CatObject[] | null
+    searchCats: (level: number) => void
 }
 
 const CatFilter: React.FC<CatData> = ({ searchCats }) => {
@@ -20,35 +20,25 @@ const CatFilter: React.FC<CatData> = ({ searchCats }) => {
     const handleSelect = (e: any) => {
         console.log(e)
         let num = parseInt(e)
-        searchCats(num, '')
+        searchCats(num)
     }
 
     return (
         <div>
-            <label htmlFor="affection">How Affectionate:</label>
-
-            <select name="affection" id="affection">
-                <option value="0">Nope</option>
-                <option value="1">Lets You Live In Their House</option>
-                <option value="2">You Can Pet Me But Your Friends Can't</option>
-                <option value="3">Will Accept Pets In Exchange For Food</option>
-                <option value="4">Friendly Within Reason</option>
-                <option value="5">I Will Never Leave You</option>
-
-
-            </select>
-
-
             <DropdownButton
-                title="Dropdown right"
+                title="Filter By Affection Level"
                 id="dropdown-menu-align-right"
                 onSelect={handleSelect}
             >
-                <Dropdown.Item eventKey="1">option-1</Dropdown.Item>
-                <Dropdown.Item eventKey="2">option-2</Dropdown.Item>
-                <Dropdown.Item eventKey="3">option 3</Dropdown.Item>
+                <Dropdown.Item eventKey="7">All Cats</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item eventKey="some link">some link</Dropdown.Item>
+                <Dropdown.Item eventKey="0">Nope</Dropdown.Item>
+                <Dropdown.Item eventKey="1">Lets You Live In Their House</Dropdown.Item>
+                <Dropdown.Item eventKey="2">You Can Pet Me But Your Friends Can't</Dropdown.Item>
+                <Dropdown.Item eventKey="3">Will Accept Pets In Exchange For Food</Dropdown.Item>
+                <Dropdown.Item eventKey="4">Friendly Within Reason</Dropdown.Item>
+                <Dropdown.Item eventKey="5">I Will Never Leave You</Dropdown.Item>
+                
             </DropdownButton>
         </div>
     )

@@ -6,28 +6,30 @@ import { NavLink } from 'react-router-dom';
 import './CatContainer.css';
 
 type CatData = {
-  catData: CatObject[]
-  searchCats: (level: number, attribute: string) => CatObject[] | null
+  catData: CatObject[],
+  searchCats: (level: number) => void
 }
 
 const CatContainer: React.FC<CatData> = ({ catData, searchCats }) => {
 
-  const catTiles = catData.map(cat => {
-    return (
-      <NavLink className="cat-tiles-nav" to={`/cats/${cat.id}`}>
-        <CatCards
-          id={cat.id}
-          img={cat.image}
-          name={cat.name}
-          key={cat.id}
-        />
-      </NavLink>
-    )
-  })
+    const catTiles = catData.map(cat => {
+      return (
+        <NavLink className="cat-tiles-nav" to={`/cats/${cat.id}`}>
+          <CatCards
+            id={cat.id}
+            img={cat.image}
+            name={cat.name}
+            key={cat.id}
+          />
+        </NavLink>
+      )
+    })
+  
+  let error = <p>no catz here</p>
   return (
     <div className='cat-container'>
       < CatFilter searchCats={searchCats} />
-      {catTiles}
+      {catData.length ? catTiles : error}
     </div>
   )
 
