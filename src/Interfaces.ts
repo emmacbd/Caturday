@@ -156,17 +156,17 @@ export const errorKitten: SelectedCat =
     
 export const errorCat: CatObject = {
     weight: {
-        imperial: "8 - 18",
-        metric: "4 - 8"
+        imperial: "♾",
+        metric: ""
     },
-    id: "bslo",
-    name: "British Longhair",
-    temperament: "Affectionate, Easy Going, Independent, Intelligent, Loyal, Social",
-    origin: "United Kingdom",
-    country_codes: "GB",
-    country_code: "GB",
-    description: "The British Longhair is a very laid-back relaxed cat, often perceived to be very independent although they will enjoy the company of an equally relaxed and likeminded cat. They are an affectionate breed, but very much on their own terms and tend to prefer to choose to come and sit with their owners rather than being picked up.",
-    life_span: "12 - 14",
+    id: "erro",
+    name: "Cat–astrophe",
+    temperament: "Absent, Aloof, Sneaky",
+    origin: "Internet",
+    country_codes: "",
+    country_code: "",
+    description: "There was a problem herding these cats. Purr-haps try again later",
+    life_span: "∞",
     indoor: 0,
     alt_names: "",
     adaptability: 5,
@@ -188,14 +188,14 @@ export const errorCat: CatObject = {
     rex: 0,
     suppressed_tail: 0,
     short_legs: 0,
-    wikipedia_url: "https://en.wikipedia.org/wiki/British_Longhair",
+    wikipedia_url: "",
     hypoallergenic: 0,
-    reference_image_id: "7isAO4Cav",
+    reference_image_id: "",
     image: {
-        id: "7isAO4Cav",
+        id: "",
         width: 960,
         height: 960,
-        url: "https://cdn2.thecatapi.com/images/7isAO4Cav.jpg"
+        url: "https://i.imgflip.com/6ij5tc.jpg"
     },
     cfa_url: "",
     vetstreet_url: "",

@@ -1,7 +1,7 @@
 import React from 'react';
 import CatCards from './CatCards';
 import CatFilter from './CatFilter';
-import { CatObject } from './Interfaces';
+import { CatObject, errorCat} from './Interfaces';
 import { NavLink } from 'react-router-dom';
 import './CatContainer.css';
 
@@ -25,7 +25,13 @@ const CatContainer: React.FC<CatData> = ({ catData, searchCats }) => {
       )
     })
   
-  let error = <p>no catz here</p>
+  let error = 
+    <div> 
+      <p>{errorCat.name}</p>
+      {errorCat.image ? <img src={errorCat.image.url} /> : '' }
+      <p>{errorCat.description}</p>
+    </div>
+
   return (
     <div className='cat-container'>
       < CatFilter searchCats={searchCats} />

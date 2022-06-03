@@ -10,13 +10,6 @@ type CatData = {
 }
 
 const CatFilter: React.FC<CatData> = ({ searchCats }) => {
-    //drop down
-    //five characteristics - affection, shedding, energy, intelligence
-    //each have drop have levels 0-5 - icons?
-    //filter pop up tag with x/delete button 
-    //p tag array "you are filtering by x, y z"
-    //
-    //filter cat
     const handleSelect = (e: any) => {
         console.log(e)
         let num = parseInt(e)
@@ -42,9 +35,6 @@ const CatFilter: React.FC<CatData> = ({ searchCats }) => {
             </DropdownButton>
         </div>
     )
-
 }
-
-
 
 export default CatFilter;

@@ -43,7 +43,7 @@ class App extends React.Component<{}, State> {
   }
 
   fetchCats = (): Promise<CatObject[]> => {
-    return fetch('https://api.thecatapi.com/v1/breeds')
+    return fetch('https://api.thecatapi.com/v1/breesds')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network request was unsuccessful')
