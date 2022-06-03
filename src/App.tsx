@@ -64,7 +64,7 @@ render() {
             <FontAwesomeIcon className="speech-bubble" icon={faComment} />
             <h2 className="meowdy">Meowdy, folks!</h2>
           </div>
-          <div>
+          <div className="routes">
             <Route exact path='/cats' render={ () => <CatContainer catData={this.state.catData}/> } />
             <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
             <Route exact path ='/cats/:id' render={ ({ match }) => {

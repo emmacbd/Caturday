@@ -6,3 +6,8 @@
   justify-content: center;
   padding-top: 20%;
 }
+
+.cat-tiles-nav {
+  text-decoration: none;
+  color: #000;
+}
