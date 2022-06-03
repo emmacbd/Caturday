@@ -3,7 +3,8 @@ import './App.css';
 import CatContainer from "./CatContainer";
 import CatDetails from "./CatDetails";
 import FeaturedCat from './FeaturedCat';
-import { CatObject } from './Interfaces';
+import CatFilter from "./CatFilter";
+import { CatObject, errorCat } from './Interfaces';
 import { Route, NavLink } from 'react-router-dom'
 import { Navbar } from './NavBar'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,14 +15,16 @@ import { faComment } from "@fortawesome/free-regular-svg-icons";
 
 type State = {
   catData: CatObject[],
-  featuredCat: CatObject | null,
+  filteredCats: CatObject[],
+  featuredCat: CatObject,
 }
 
-class App extends React.Component< {}, State> {
-      state: State = {
-         catData:[],
-         featuredCat: null,
-      }
+class App extends React.Component<{}, State> {
+  state: State = {
+    catData: [errorCat],
+    filteredCats: [errorCat],
+    featuredCat: errorCat,
+  }
 
 
   getDay = () => {
@@ -31,11 +34,12 @@ class App extends React.Component< {}, State> {
   }
 
 
-componentDidMount() {
-  this.fetchCats()
-  .then(data => this.setState({ catData: data, featuredCat: data[this.getDay()] }, () => {console.log(this.state)}))
-  .catch(error => {console.log("Oh no!", error)
-    });
+  componentDidMount() {
+    this.fetchCats()
+      .then(data => this.setState({ catData: data, filteredCats: data, featuredCat: data[this.getDay()] }, () => { console.log(this.state) }))
+      .catch(error => {
+        console.log("Oh no!", error)
+      });
   }
 
   fetchCats = (): Promise<CatObject[]> => {
@@ -51,31 +55,42 @@ componentDidMount() {
       })
   }
 
-render() {
-  return (
-    <div className="App">
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        <div className="main">
-          <div className="background-events">
-            <h1 className="App-title">CATURDAY</h1>
-            <FontAwesomeIcon className="speech-bubble" icon={faComment} />
-            <h2 className="meowdy">Meowdy, folks!</h2>
+  searchCats = (level: number) => {
+    if(level === 7){
+      this.setState({filteredCats: this.state.catData})
+    } else {
+      let selectCats = this.state.catData.filter(cat => {
+        return cat.affection_level == level
+      })
+      this.setState({filteredCats: selectCats})
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <div className="main">
+            <div className="background-events">
+              <h1 className="App-title">CATURDAY</h1>
+              <FontAwesomeIcon className="speech-bubble" icon={faComment} />
+              <h2 className="meowdy">Meowdy, folks!</h2>
+            </div>
+            <div>
+              <Route exact path='/cats' render={() => <CatContainer catData={this.state.filteredCats} searchCats={this.searchCats} />} />
+              <Route exact path='/' render={() => <FeaturedCat catInfo={this.state.featuredCat} />} />
+              <Route exact path='/cats/:id' render={({ match }) => {
+                return <CatDetails catId={match.params.id} />
+              }} />
+            </div>
           </div>
-          <div>
-            <Route exact path='/cats' render={ () => <CatContainer catData={this.state.catData}/> } />
-            <Route exact path='/' render={() =>  <FeaturedCat catInfo={this.state.featuredCat}/> } />
-            <Route exact path ='/cats/:id' render={ ({ match }) => {
-              return <CatDetails catId={ match.params.id }  />
-            } } />
-          </div>
-        </div>
-      </main>
-    </div>
-  )
- }
+        </main>
+      </div>
+    )
+  }
 }
 
 export default App;
