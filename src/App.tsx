@@ -57,10 +57,8 @@ class App extends React.Component<{}, State> {
 
   searchCats = (level: number, attribute: string) => {
     let selectCats = this.state.catData.filter(cat => {
-      console.log(cat.affection_level, level)
       return cat.affection_level == level
     })
-    console.log("Search happened", selectCats)
     return selectCats
   }
 
