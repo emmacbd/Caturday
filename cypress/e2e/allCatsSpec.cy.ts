@@ -16,7 +16,15 @@ describe('All cats view', () => {
     })
 
     it('Should be able to filter by affection level', () => {
-        cy.get('.dropdown').click().type({ downArrow }{ enter })
+        cy.get('.affection-level-dropdown').select('Nope', { force: true })
         cy.get('.cat-container').children().should('have.length', 1)
+        cy.get('.affection-level-dropdown').select('Friendly Within Reason', { force: true })
+        cy.get('.cat-container').children().should('have.length', 20)
+    })
+
+    it('Should display selected cat information', () => {
+        cy.intercept('GET', 'https://api.thecatapi.com/v1/images/search?breed_ids=aege', { fixture: 'aegeData.json' })
+        cy.contains('Aegean').click()
+        cy.url().should('eq', 'http://localhost:3000/cats/aege')
     })
 })
