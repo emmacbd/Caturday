@@ -20,7 +20,7 @@ const CatFilter: React.FC<CatData> = ({ searchCats }) => {
         <div>
             <select
                 title="Filter By Affection Level"
-                id="dropdown-menu-align-right"
+                className="affection-level-dropdown"
                 onChange={handleSelect}
             >
                 <option value="7">All Cats</option>
