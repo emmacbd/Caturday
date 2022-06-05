@@ -26,14 +26,15 @@ const CatContainer: React.FC<CatData> = ({ catData, searchCats }) => {
   })
 
   let error =
-    <div>
-      <p>{errorCat.name}</p>
+
+    <div className="card error-tile">
+      <h1 className="wanted-poster-card">{errorCat.name}</h1>
       {errorCat.image ? <img src={errorCat.image.url} /> : ''}
-      <p>{errorCat.description}</p>
+      <p className="wanted-poster-name">{errorCat.description}</p>
     </div>
 
   return (
-    <div>
+    <div className="cat-wrapper">
       < CatFilter searchCats={searchCats} />
       <div className='cat-container'>
         {catData.length ? catTiles : error}
