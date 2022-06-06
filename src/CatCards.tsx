@@ -3,13 +3,12 @@ import {Image} from './Interfaces';
 import './CatCards.css';
 
 type CatCardProps = {
-  id: string,
   img?: Image | null ,
   name: string,
-  key: string
+  // key: string
 }
 
-const CatCards: React.FC<CatCardProps> = ({id, img, name, key}) => {
+const CatCards: React.FC<CatCardProps> = ({img, name}) => {
   return (
 
     <div className="card">

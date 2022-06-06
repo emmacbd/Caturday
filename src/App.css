@@ -4,6 +4,7 @@
 
 .App-title {
   font-family: 'Rye', cursive;
+  z-index: 50;
   color: #b76027;
   margin: 0;
   position: fixed;
@@ -12,13 +13,6 @@
   left: 50%;
   font-size: 7em;
   padding-top: .2em;
-}
-
-.speech-bubble,
-.meowdy {
-  display: none;
-  position: fixed;
-  color: #b76027;
 }
 
 .speech-bubble {
@@ -33,16 +27,19 @@
   font-size:1em;
 }
 
-.background-events {
-  position: fixed;
-}
-
 .background-events:hover > .speech-bubble {
   display: block;
 }
 
 .background-events:hover > .meowdy {
   display: block;
+}
+
+.speech-bubble,
+.meowdy {
+  display: none;
+  position: fixed;
+  color: #b76027;
 }
 
 @media screen and (max-width: 75em) {

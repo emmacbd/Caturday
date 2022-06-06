@@ -26,7 +26,7 @@ const CatDetails: React.FC<CatProps> = ({ catId }) => {
           <h2 className="selected-cat-name">{CatInfo[0].breeds[0].name}</h2>
           <div className="selected-cat-other">
             <p>{CatInfo[0].breeds[0].temperament}</p>
-            <p>Average Life Span : {CatInfo[0].breeds[0].life_span}</p>
+            <p>Average Life Span : {CatInfo[0].breeds[0].life_span} years</p>
             <p>{CatInfo[0].breeds[0].description}</p>
           </div>
         </div>

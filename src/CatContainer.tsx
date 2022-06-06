@@ -12,14 +12,12 @@ type CatData = {
 
 const CatContainer: React.FC<CatData> = ({ catData, searchCats }) => {
 
-  const catTiles = catData.map(cat => {
+  const catTiles = catData.map((cat) => {
     return (
-      <NavLink className="cat-tiles-nav" to={`/cats/${cat.id}`}>
+      <NavLink className="cat-tiles-nav" key={cat.id} to={`/cats/${cat.id}`}>
         <CatCards
-          id={cat.id}
           img={cat.image}
           name={cat.name}
-          key={cat.id}
         />
       </NavLink>
     )
@@ -27,7 +25,7 @@ const CatContainer: React.FC<CatData> = ({ catData, searchCats }) => {
 
   let error =
 
-    <div className="card error-tile">
+    <div className="card error-tile" key="error-cat">
       <h1 className="wanted-poster-card">{errorCat.name}</h1>
       {errorCat.image ? <img className="error-cat-image" src={errorCat.image.url} /> : ''}
       <p className="wanted-poster-name">{errorCat.description}</p>

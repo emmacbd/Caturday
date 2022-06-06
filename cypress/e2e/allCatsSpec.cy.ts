@@ -16,7 +16,7 @@ describe('All cats view', () => {
     })
 
     it('Should be able to filter by affection level', () => {
-        cy.get('.affection-level-dropdown').select('Nope', { force: true })
+        cy.get('.affection-level-dropdown').select(`You Can Pet Me But Your Friends Can't`, { force: true })
         cy.get('.cat-container').children().should('have.length', 1)
         cy.get('.affection-level-dropdown').select('Friendly Within Reason', { force: true })
         cy.get('.cat-container').children().should('have.length', 20)
