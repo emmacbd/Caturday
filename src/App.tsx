@@ -80,7 +80,7 @@ class App extends React.Component<{}, State> {
           </div>
           <div className="cat-display">
             <Route exact path='/cats' render={() => <CatContainer catData={this.state.filteredCats} searchCats={this.searchCats} />} />
-            <Route exact path='/' render={() => <FeaturedCat catInfo={this.state.featuredCat} />} />
+            <Route exact path='/Caturday/' render={() => <FeaturedCat catInfo={this.state.featuredCat} />} />
             <Route exact path='/cats/:id' render={({ match }) => {
               return <CatDetails catId={match.params.id} />
             }} />
