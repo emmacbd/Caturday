@@ -12,7 +12,7 @@ const CatFilter: React.FC<CatData> = ({ searchCats }) => {
     }
 
     return (
-        <div>
+        <div className="cat-filter-section">
             <select
                 title="Filter By Affection Level"
                 className="affection-level-dropdown"

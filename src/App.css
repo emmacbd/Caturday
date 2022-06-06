@@ -4,36 +4,27 @@
 
 .App-title {
   font-family: 'Rye', cursive;
+  z-index: 50;
   color: #b76027;
   margin: 0;
   position: fixed;
   top: 0;
+  display: inline-block;
   left: 50%;
   font-size: 7em;
   padding-top: .2em;
 }
 
-.meowdy
 .speech-bubble {
-  margin: 10%;
-}
-
-.speech-bubble {
-  display: none;
-  position: fixed;
   top: 5%;
   left: 32%;
   font-size: 10em;
-  color: #b76027;
 }
 
 .meowdy {
-  display: none;
-  position: fixed;
   top: 12%;
   left: 33.5%;
   font-size:1em;
-  color: #b76027;
 }
 
 .background-events:hover > .speech-bubble {
@@ -44,6 +35,30 @@
   display: block;
 }
 
-.routes {
-  display: flex;
+.speech-bubble,
+.meowdy {
+  display: none;
+  position: fixed;
+  color: #b76027;
+}
+
+@media screen and (max-width: 75em) {
+  .App-title
+   {
+    font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .App-title
+   {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .App-title
+   {
+    font-size: 100%;
+  }
 }

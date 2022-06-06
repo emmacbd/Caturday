@@ -74,8 +74,8 @@ class App extends React.Component<{}, State> {
         </header>
         <main className="main">
           <div className="background-events">
-            <h1 className="App-title">CATURDAY</h1>
             <FontAwesomeIcon className="speech-bubble" icon={faComment} />
+            <h1 className="App-title">CATURDAY</h1>
             <h2 className="meowdy">Meowdy, folks!</h2>
           </div>
           <div className="cat-display">

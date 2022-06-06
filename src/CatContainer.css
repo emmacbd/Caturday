@@ -1,10 +1,11 @@
 .cat-container {
   display: flex;
+  position: sticky;
   flex-wrap: wrap;
   grid-gap: 0px;
   color: #FFF;
   justify-content: center;
-  /* padding-top: 20%; */
+  padding-top: 5%;
 }
 
 .cat-tiles-nav {
@@ -13,5 +14,21 @@
 }
 
 .cat-display {
-  margin-top: 20%;
+  margin-top: 15%;
+  position: sticky;
+}
+
+.error-cat-image {
+  width: 80%;
+}
+
+.error-tile {
+  width: 40%;
+  font-size: .5em;
+}
+
+.cat-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
 }

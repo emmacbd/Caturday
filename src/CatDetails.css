@@ -90,7 +90,7 @@
 }
 
 .selected-cat-info {
-  padding-right: 2em;
+  margin-right: 3em;
 }
 
 .selected-cat-image {
@@ -104,12 +104,38 @@
 }
 
 .selected-cat-other {
-  font-size: 2em;
-}
-
-p {
+  font-size: 1.5em;
   font-family: serif;
 }
 
-/* 'Segoe UI', 'Roboto', 'Oxygen', */
-/* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', */
+
+@media screen and (max-width: 70em) {
+  .selected-cat-name
+   {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 70em) {
+  .selected-cat-info
+   {
+    font-size: .7em;
+  }
+}
+
+
+@media screen and (max-width: 60em) {
+  .selected-cat-name,
+  .selected-cat-info
+   {
+    font-size: .7em;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .selected-cat-name,
+  .selected-cat-info
+   {
+    font-size: .5em;
+  }
+}
