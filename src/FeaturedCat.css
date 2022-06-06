@@ -104,37 +104,89 @@
   margin: 1em;
 }
 
-.featured-cat-info {
+.featured-cat-info,
+.most-wanted,
+.cat-of-the-day,
+.cat-of-the-day-name {
   margin: 0;
+  letter-spacing: .3rem;
 }
 
 .most-wanted {
-  letter-spacing: .3rem;
   font-size: 5em;
-  margin: 0px;
 }
 
 .cat-of-the-day {
-  letter-spacing: .3rem;
   width: 80%;
   display: flex;
   display: inline-block;
   font-size: 2em;
   border-bottom: 5px solid black;
-  margin: 0px;
 }
 
 .cat-of-the-day-name {
   width: 80%;
   display: flex;
   display: inline-block;
-  letter-spacing: .3rem;
   font-size: 3em;
   border-top: 5px solid black;
-  margin: 0px;
+  padding-bottom: 5%;
 }
 
 .cat-of-day-temperament {
   letter-spacing: .2rem;
   margin: 0;
 }
+
+@media screen and (max-width: 90em) {
+  .cat-of-the-day-name
+   {
+    font-size: 3em;
+  }
+}
+
+
+@media screen and (max-width: 90em) {
+  .most-wanted
+   {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 95em) {
+  .cat-of-day-temperament
+   {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 80em) {
+  .most-wanted
+   {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .most-wanted,
+  .cat-of-the-day-name
+   {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .most-wanted,
+  .cat-of-the-day-name
+   {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .cat-of-day-temperament
+   {
+    font-size: 100%;
+  }
+}
+

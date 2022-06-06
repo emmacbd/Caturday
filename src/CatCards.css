@@ -1,5 +1,5 @@
 .cat-tiles-nav {
-  width: 25%;
+  width: 20%;
   position: relative;
   transition: all .2s ease-in-out;
   margin: 20px;
@@ -89,24 +89,31 @@
       1.1% 5.5%);
 }
 
+.cat-tiles-nav:hover {
+  transform: scale(1.1);
+}
+
+
 .cat-image {
   width: 100%;
   padding: .5em;
 }
 
-.wanted-poster-card {
+.wanted-poster-card,
+.wanted-poster-name {
   font-family: 'Smokum', cursive;
-  letter-spacing: .4rem;
-  font-size: 7em;
   margin: 0px;
+}
+
+.wanted-poster-card {
+  letter-spacing: .4rem;
+  font-size: 5.5em;
   border-bottom: 5px solid black;
 }
 
 .wanted-poster-name {
-  font-family: 'Smokum', cursive;
   letter-spacing: .3rem;
   font-size: 3em;
-  margin: 0px;
   border-top: 5px solid black;
   padding: 0;
 }
@@ -116,7 +123,6 @@
   color: black;
   width: 50%;
   position: relative;
-  transition: all .2s ease-in-out;
   margin: 20px;
   background: url(old-paper-horizontal.jpeg);
   box-shadow: 0 0 20px 5px #000 inset;
@@ -202,4 +208,26 @@
       0.8% 17.4%,
       2.5% 8.6%,
       1.1% 5.5%);
+}
+
+@media screen and (max-width: 80em) {
+  .wanted-poster-card
+   {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .wanted-poster-name
+   {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .wanted-poster-name,
+  .wanted-poster-card
+   {
+    font-size: 100%;
+  }
 }
