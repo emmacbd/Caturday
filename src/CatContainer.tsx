@@ -14,7 +14,7 @@ const CatContainer: React.FC<CatData> = ({ catData, searchCats }) => {
 
   const catTiles = catData.map((cat) => {
     return (
-      <NavLink className="cat-tiles-nav" key={cat.id} to={`/cats/${cat.id}`}>
+      <NavLink className="cat-tiles-nav" key={cat.id} to={`/Caturday/cats/${cat.id}`}>
         <CatCards
           img={cat.image}
           name={cat.name}

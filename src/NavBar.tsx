@@ -8,10 +8,10 @@ export const Navbar = () => {
     return (
     <nav>
       <FontAwesomeIcon className="faCat" icon={faCat} />
-      <NavLink className="nav-bar" to='/cats'>
+      <NavLink className="nav-bar" to='/Caturday/cats'>
         <p className="cat-link">All Cats</p>
       </NavLink>
-      <NavLink className="nav-bar" to='/'>
+      <NavLink className="nav-bar" to='/Caturday/'>
         <p className="cat-link">Cat of the Day</p>
       </NavLink>
     </nav>
