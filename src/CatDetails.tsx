@@ -21,16 +21,16 @@ const CatDetails: React.FC<CatProps> = ({ catId }) => {
     } else {
       return <section className="selected-cat-section">
 
-          <img className="selected-cat-image" src={CatInfo[0].url} />
-          <div className="selected-cat-info">
-            <p className="selected-cat-name">{CatInfo[0].breeds[0].name}</p>
-            <div className="selected-cat-other">
-              <p>{CatInfo[0].breeds[0].temperament}</p>
-              <p>{CatInfo[0].breeds[0].life_span}</p>
-              <p>{CatInfo[0].breeds[0].description}</p>
-            </div>
+        <img className="selected-cat-image" src={CatInfo[0].url} />
+        <div className="selected-cat-info">
+          <h2 className="selected-cat-name">{CatInfo[0].breeds[0].name}</h2>
+          <div className="selected-cat-other">
+            <p>{CatInfo[0].breeds[0].temperament}</p>
+            <p>Average Life Span : {CatInfo[0].breeds[0].life_span}</p>
+            <p>{CatInfo[0].breeds[0].description}</p>
           </div>
-        </section>
+        </div>
+      </section>
 
     }
   }

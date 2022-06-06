@@ -1,4 +1,4 @@
-export interface Weight {   
+export interface Weight {
     imperial: string;
     metric: string;
 }
@@ -50,65 +50,65 @@ export interface CatObject {
 }
 
 export interface SelectedCatBreedInfo {
-    
-        weight: Weight;
-        id: string;
-        name: string;
-        cfa_url: string;
-        vetstreet_url: string;
-        vcahospitals_url: string;
-        temperament: string;
-        origin: string;
-        country_codes: string;
-        country_code: string;
-        description: string;
-        life_span: string;
-        indoor: number;
-        lap: number;
-        adaptability: number;
-        affection_level: number;
-        child_friendly: number;
-        cat_friendly: number;
-        dog_friendly: number;
-        energy_level: number;
-        grooming: number;
-        health_issues: number;
-        intelligence: number;
-        shedding_level: number;
-        social_needs: number;
-        stranger_friendly: number;
-        vocalisation: number;
-        bidability: number;
-        experimental: number;
-        hairless: number;
-        natural: number;
-        rare: number;
-        rex: number;
-        suppressed_tail: number;
-        short_legs: number;
-        wikipedia_url: string;
-        hypoallergenic: number;
-        reference_image_id: string
-   
+
+    weight: Weight;
+    id: string;
+    name: string;
+    cfa_url: string;
+    vetstreet_url: string;
+    vcahospitals_url: string;
+    temperament: string;
+    origin: string;
+    country_codes: string;
+    country_code: string;
+    description: string;
+    life_span: string;
+    indoor: number;
+    lap: number;
+    adaptability: number;
+    affection_level: number;
+    child_friendly: number;
+    cat_friendly: number;
+    dog_friendly: number;
+    energy_level: number;
+    grooming: number;
+    health_issues: number;
+    intelligence: number;
+    shedding_level: number;
+    social_needs: number;
+    stranger_friendly: number;
+    vocalisation: number;
+    bidability: number;
+    experimental: number;
+    hairless: number;
+    natural: number;
+    rare: number;
+    rex: number;
+    suppressed_tail: number;
+    short_legs: number;
+    wikipedia_url: string;
+    hypoallergenic: number;
+    reference_image_id: string
+
 }
 
 export interface SelectedCat {
-   
-        breeds: SelectedCatBreedInfo[];
-        id: string;
-        url: string;
-        width: number;
-        height: number
-        }
-      
+
+    breeds: SelectedCatBreedInfo[];
+    id: string;
+    url: string;
+    width: number;
+    height: number
+}
+
 export const errorKitten: SelectedCat =
-    {
+{
     breeds: [
         {
-        weight: {
-            imperial: "6 - 12",
-            metric: "3 - 7"
-        },
+            weight: {
+                imperial: "6 - 12",
+                metric: "3 - 7"
+            },
             id: "beng",
             name: "Bengal",
             cfa_url: "http://cfa.org/Breeds/BreedsAB/Bengal.aspx",
@@ -152,15 +152,15 @@ export const errorKitten: SelectedCat =
     url: "https://cdn2.thecatapi.com/images/ZocD-pQxd.jpg",
     width: 880,
     height: 1100
-    }
-    
+}
+
 export const errorCat: CatObject = {
     weight: {
         imperial: "♾",
         metric: ""
     },
     id: "erro",
-    name: "Cat–astrophe",
+    name: "Cat–astrophe!",
     temperament: "Absent, Aloof, Sneaky",
     origin: "Internet",
     country_codes: "",

@@ -36,7 +36,7 @@ class App extends React.Component<{}, State> {
 
   componentDidMount() {
     this.fetchCats()
-      .then(data => this.setState({ catData: data, filteredCats: data, featuredCat: data[this.getDay()] }, () => { console.log(this.state) }))
+      .then(data => this.setState({ catData: data, filteredCats: data, featuredCat: data[this.getDay()] }))
       .catch(error => {
         console.log("Oh no!", error)
       });
@@ -56,13 +56,13 @@ class App extends React.Component<{}, State> {
   }
 
   searchCats = (level: number) => {
-    if(level === 7){
-      this.setState({filteredCats: this.state.catData})
+    if (level === 7) {
+      this.setState({ filteredCats: this.state.catData })
     } else {
       let selectCats = this.state.catData.filter(cat => {
         return cat.affection_level == level
       })
-      this.setState({filteredCats: selectCats})
+      this.setState({ filteredCats: selectCats })
     }
   }
 
@@ -72,20 +72,18 @@ class App extends React.Component<{}, State> {
         <header>
           <Navbar />
         </header>
-        <main>
-          <div className="main">
-            <div className="background-events">
-              <h1 className="App-title">CATURDAY</h1>
-              <FontAwesomeIcon className="speech-bubble" icon={faComment} />
-              <h2 className="meowdy">Meowdy, folks!</h2>
-            </div>
-            <div>
-              <Route exact path='/cats' render={() => <CatContainer catData={this.state.filteredCats} searchCats={this.searchCats} />} />
-              <Route exact path='/' render={() => <FeaturedCat catInfo={this.state.featuredCat} />} />
-              <Route exact path='/cats/:id' render={({ match }) => {
-                return <CatDetails catId={match.params.id} />
-              }} />
-            </div>
+        <main className="main">
+          <div className="background-events">
+            <h1 className="App-title">CATURDAY</h1>
+            <FontAwesomeIcon className="speech-bubble" icon={faComment} />
+            <h2 className="meowdy">Meowdy, folks!</h2>
+          </div>
+          <div className="cat-display">
+            <Route exact path='/cats' render={() => <CatContainer catData={this.state.filteredCats} searchCats={this.searchCats} />} />
+            <Route exact path='/' render={() => <FeaturedCat catInfo={this.state.featuredCat} />} />
+            <Route exact path='/cats/:id' render={({ match }) => {
+              return <CatDetails catId={match.params.id} />
+            }} />
           </div>
         </main>
       </div>

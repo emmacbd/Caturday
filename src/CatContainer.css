@@ -4,10 +4,14 @@
   grid-gap: 0px;
   color: #FFF;
   justify-content: center;
-  padding-top: 20%;
+  /* padding-top: 20%; */
 }
 
 .cat-tiles-nav {
   text-decoration: none;
   color: #000;
+}
+
+.cat-display {
+  margin-top: 20%;
 }
