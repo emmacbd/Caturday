@@ -21,7 +21,7 @@ With this application users are able to view a cat of the day, a list of cat bre
 
 ## Set Up Instructions
 #### Deployed Site
-1. Visit [Caturday](deploylink) via your browser
+1. Visit [Caturday](https://caturday-2201.herokuapp.com/) via your browser
 
 #### Running it Locally
 1. Clone this repo to your local machine
