@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SelectedCat, errorKitten } from './Interfaces';
+import { SelectedCat } from './Interfaces';
 import './CatDetails.css';
 
 type CatProps = {

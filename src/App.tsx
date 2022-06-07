@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import CatContainer from "./CatContainer";
 import CatDetails from "./CatDetails";
 import FeaturedCat from './FeaturedCat';
-import CatFilter from "./CatFilter";
 import { CatObject, errorCat } from './Interfaces';
-import { Route, NavLink } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { Navbar } from './NavBar'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
-// import {fetchCats} from "./ApiCalls"
-
 
 
 type State = {
