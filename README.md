@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Caturday
+![Meowdy Folks!](https://media.giphy.com/media/4Gz6R1DyljKaN2ez8A/giphy.gif)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
+Caturday is a place for both cat-enthusiasts and new-to-cats-users to learn more about cat breeds and potentially find one that would match their lifestyle— all in a Western theme.
 
-## Available Scripts
+This was an assignment from Turing School of Software and Design's Front End Engineering program, known as the Stretch Tech project. Strech Tech is a group project focused on learning and implementing a new technology with peers rather than being taught by instructors with a structured curriculum. We chose to learn and implement Typescript. 
 
-In the project directory, you can run:
+    It's a-meow-zing what you can learn in just a week! 
 
-### `npm start`
+With this application users are able to view a cat of the day, a list of cat breeds fetched from a RESTful API. To learn more about a breed, the user can click on the wanted poster preview and get additional information. Users can also filter by the affection level of cats
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
+* Typescript
+* React | React Router
+* Cypress
+* Javascript
+* HTML
+* CSS
 
-### `npm test`
+## Set Up Instructions
+#### Deployed Site
+1. Visit [Caturday](deploylink) via your browser
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Running it Locally
+1. Clone this repo to your local machine
+2. `cd ` into `Caturday`
+3. Then, run `npm install `from your command line. Do not run `npm audit fix --force`
+4. After you run npm install inside of your copy of this repo, run:
+`npm start`
+This command runs the app in the development mode locally so that you can view and use the application in your browser.
+```
+You can now view Caturday in the browser.
+  Local:  http://localhost:3000
+```
 
-### `npm run build`
+5. When you are done exploring _**Caturday**_ make sure that you type `Control + C` in your terminal to stop the server before closing your Terminal.
+---
+## Using the Application
+Upon load, a user will see a featured **Cat of the Day** below the Caturday title. Upon hover, the cat in the sky welcomes the user with a friendly "Meowdy Folks!" To learn about a cat, the user can slimply click on the Wanted poster. They can return home by clicking Cat of the Day or All Cats from the sidebar, using the brower back button, or removing the `/cats/(cat's id)` from the URL.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![All Cats View](https://media.giphy.com/media/u6hxUjmQq1W9xX4CuQ/giphy.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Filtering By Affection
+If intending to adopt a breed, the user can select an affection level to see what cat matches their style. If no cats are a match the search, they will be shown an error message. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Filter Functionality](https://media.giphy.com/media/z9KedApqPzKnjAyFpB/giphy.gif)
 
-### `npm run eject`
+#### Breed Information
+To learn more about a breed of cat, the user can see additional information when they click on a Wanted Poster. 
+![Sample Cat info](./docs/sampleCat.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Error Handling
+If Cat-astrophe hits and our there is a problem fetching and herding the cats for our users, we have made sure that the user knows something is wrong. 
+![Error Cat](./docs/errorCat.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+----
+## Contributors
+- [Emma Brooke-Davison](https://github.com/emmacbd)
+- [Shane Warning](https://github.com/shanekwarning)
+- [Angele Williams](https://github.com/angelewilliams)
+- [Oakley Windiate](https://github.com/oakleywindiate)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Acknowledgments
 
-## Learn More
+* [Turing Scool of Software & Design](https://turing.edu/)
+* Turing Instructors: Kayla Gordon and Robbie Jaeger
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Planning Resources
+
+* [MVP Planning](https://docs.google.com/document/d/1kWYpUBlvos-K7xBsRH4wt7K9NMBGLe2GjCjtbkYCnpo/edit?usp=sharing)
+* [Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
