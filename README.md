@@ -67,6 +67,7 @@ If Cat-astrophe hits and our there is a problem fetching and herding the cats fo
 
 * [Turing Scool of Software & Design](https://turing.edu/)
 * Turing Instructors: Kayla Gordon and Robbie Jaeger
+* [The Cat API](https://docs.thecatapi.com/)
 
 
 #### Planning Resources
