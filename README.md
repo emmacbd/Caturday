@@ -4,7 +4,7 @@
 ## About The Project
 Caturday is a place for both cat-enthusiasts and new-to-cats-users to learn more about cat breeds and potentially find one that would match their lifestyle— all in a Western theme.
 
-This was an assignment from Turing School of Software and Design's Front End Engineering program, known as the Stretch Tech project. Strech Tech is a group project focused on learning and implementing a new technology with peers rather than being taught by instructors with a structured curriculum. We chose to learn and implement Typescript. 
+This was an assignment from Turing School of Software and Design's Front End Engineering program, known as the Stretch Tech project. Stretch Tech is a group project focused on learning and implementing a new technology with peers rather than being taught by instructors with a structured curriculum. We chose to learn and implement Typescript. 
 
     It's a-meow-zing what you can learn in just a week! 
 
